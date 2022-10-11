@@ -85,7 +85,7 @@ function canWeDeliver (zipCode, array) {
     if(array[i]=== zipCode){
         return `You're in our delivery zone!`
     }
-   return 'Sorry, we can\'t deliver to that address'
+   return 'Sorry, we can\'t deliver to that address' //this needs to be outside of your loop because the loop needs to go through everything. 
 }
 
 console.log(canWeDeliver(85213, deliveryAreaZipCodes))
@@ -124,7 +124,7 @@ const deals = [
 */
 
 //CODE HERE
-
+deals[0].title = deals[0].replace("15", "10").trim()
 
 /*
     The restaurant is going to continue its

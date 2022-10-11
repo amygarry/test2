@@ -96,16 +96,16 @@ console.log(category)
 
 //CODE HERE
 class pizzas {
-    constructor(name,price, category, popularity, rating, tags){
+    constructor(name,price, category, popularity, rating, tag){
     this.name = name;
     this.price = price;
     this.category = category
     this.popularity = popularity
     this.rating= rating
-    this.tags=tags
+    this.tag=tag
     }
 }
-let pepperoni = new pizzas("Pepperoni", 12, "Entree", 70, 8, ["gluten Free opiton"])
+let pepperoni = new pizzas("Pepperoni", 12, "Entree", 70, 8, ["GF"])
 let meatLovers = new pizzas("Meat Lovers", 16, "Entree", 40, 5, ["no vegitarian opiton", "costomizable"])
 let margherita = new pizzas("Margherita", 14, "Entree", 30, 3, ["GF","Vegetarian"])
 let hawaiian = new pizzas("hawaiian", 12, "Entree", 20, 4, ["GF"])
@@ -127,7 +127,7 @@ let foodArr = [pepperoni, meatLovers, margherita, hawaiian, cheese]
 
 //CODE HERE
 
-//const filteredFood = foodArr.filter(element => element.tag === ["GF"])
+const filteredFood = foodArr.filter(element => element.tag.includes("GF"))
 //console.log(filteredFood)
 
 
@@ -173,8 +173,15 @@ let foodArr = [pepperoni, meatLovers, margherita, hawaiian, cheese]
 
 //CODE HERE
 function filterByProperty (property, number, type){
-    
-
+    let filteredArray = foodArr.filter((foodobj)=>{
+        if(type === 'above'){
+            return foodobj[property]> number 
+        }
+        else if(type ==='below'){
+            return foodobj[property] < number
+        }
+    })
+    return filteredArray
 }
 
 /*
@@ -185,3 +192,5 @@ function filterByProperty (property, number, type){
 */
 
 //CODE HERE
+
+console.log(filterByProperty("rating", 6, "below"))

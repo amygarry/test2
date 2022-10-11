@@ -58,7 +58,7 @@ function calcFinalPrice (cartTotal, couponValue, tax){
         return (cartTotal*(1+tax))-couponValue
         
 }
-
+console.log(calcFinalPrice(10, 2, 0.05))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -82,6 +82,10 @@ function calcFinalPrice (cartTotal, couponValue, tax){
 
 /*
     TEXT ANSWER HERE
+name: (string), constomer order needs a name so I know who the order is 
+address:(string), I need to knwo where to send the pizza 
+phone: (number), to call order if they dont answer the phone 
+wantsMarketingEmails:(boolean) whether they want to get marketing emails 
 
 */
 
@@ -91,3 +95,10 @@ function calcFinalPrice (cartTotal, couponValue, tax){
 */
 
 //CODE HERE
+
+let custObj = {
+    name: "Jody",
+    adrdress: "1234 Main St, Lehi Utah 84043",
+    phone: 4802202990,
+    wantsMarkeingEmails: true,
+}
